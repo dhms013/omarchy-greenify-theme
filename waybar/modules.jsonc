@@ -1,0 +1,268 @@
+{
+  "custom/start": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/space": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      // "default": "零",
+      // "active": "",
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "custom/menu": {
+    "format": "𐤃𐤄𐤌𐤑",
+    "on-click": "~/.config/scripts/custom-menu",
+    "tooltip-format": "menu"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 16,
+    "icon": true,
+    "icon-size": 13,
+    "tooltip": true,
+    "rewrite": {
+      "nvim": "eovim ",
+      "WhatsApp": " WhatsApp "
+    },
+    "swap-icon-label": false
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "max-length": 30,
+    "player": "playerctld",
+    "player-icons": {
+      "default": "▶"
+      // "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    }
+  },
+  "custom/notification": {
+    "format": "",
+    "on-click": "makoctl restore",
+    "on-click-right": "floating-terminal show-notification",
+    "tooltip": false,
+    "restart-interval": 1
+  },
+  "temperature": {
+    "critical-threshold": 90,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "format": " {temperatureC}°C",
+    "format-critical": "🔥 {temperatureC}°C",
+    "tooltip": true,
+    // "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e btop",
+    "interval": 3
+  },
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e s-tui",
+    "interval": 3
+  },
+  "memory": {
+    "format": "  {used}G/{total}G",
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e btop",
+    "interval": 3
+  },
+  "clock": {
+    "format": " {:L%a %d, %H:%M} ",
+    "format-alt": " {:L%A %d/%m/%Y} ",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "network#speed": {
+    "format-wifi": "⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "format-ethernet": "⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "format-disconnected": "",
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e bash -c 'show-logo && speedtest-cli && show-done'",
+    "interval": 1
+  },
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 1,
+    "spacing": 1,
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e impala"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "battery": {
+    "format": "{capacity}%{icon}",
+    "format-discharging": "{capacity}%{icon}",
+    "format-charging": "{capacity}%{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "{capacity}% 󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "on-click": "custom-menu power",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e bluetui"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "xdg-terminal-exec --app-id=dhms.terminal -e wiremix",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "custom/ddc_brightness": {
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "exec": "~/.config/scripts/brightness get",
+    "return-type": "json",
+    "on-scroll-up": "~/.config/scripts/brightness up",
+    "on-scroll-down": "~/.config/scripts/brightness down",
+    "on-click-right": "~/.config/scripts/brightness mid",
+    "interval": "once",
+    "signal": 10,
+    "tooltip": true,
+    "tooltip-format": "Brightness: {percentage}%"
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
+  },
+  "custom/expand-icon": {
+    "format": "  ",
+    "tooltip": false
+  },
+  "custom/screenrecording-indicator": {
+    "on-click": "screenrecord",
+    "exec": "~/.config/scripts/screenrecord-indicator",
+    "signal": 8,
+    "return-type": "json"
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "~/.config/scripts/custom-menu system",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 5
+  }
+}
