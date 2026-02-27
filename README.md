@@ -1,6 +1,5 @@
 # Greenify
 
-Yes, curse my naming sense..
 This theme is based on several themes that exists in Omarchy's community.
 If I remember correctly, this theme is based on Green Hakkar, Robco, Phosphor Os, and many more. (Can't really remember)
 
